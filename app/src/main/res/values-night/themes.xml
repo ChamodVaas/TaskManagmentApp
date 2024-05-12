@@ -2,6 +2,8 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Lab4" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/purpule</item>
+        <item name="colorPrimaryVariant">@color/purpule</item>
+        <item name="android:statusBarColor">@color/purpule</item>
     </style>
 </resources>
