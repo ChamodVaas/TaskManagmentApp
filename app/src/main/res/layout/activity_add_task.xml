@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".addTaskActivity">
+
+    <TextView
+        android:id="@+id/addTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:text = "add Taask"
+        android:textSize="24sp" />
+
+    <ImageView
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_done_24"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/addTask"
+        android:layout_marginEnd="6dp"
+        app:tint="?attr/colorControlNormal" />
+
+    <EditText
+        android:id="@+id/addTitle"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Enter the Title"
+        android:padding="12dp"
+        android:textSize="20sp"
+        android:layout_below="@+id/addTask"
+        android:background="@drawable/purple_boader"
+        android:layout_marginTop="16dp"
+        android:maxLines="1"/>
+
+    <EditText
+        android:id="@+id/addContent"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Enter the Content"
+        android:padding="12dp"
+        android:textSize="20sp"
+        android:layout_below="@+id/addTitle"
+        android:background="@drawable/purple_boader"
+        android:layout_marginTop="16dp"
+        android:maxLines="3"/>
+
+    <Spinner
+        android:id="@+id/addPriority"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/addContent"
+        android:layout_marginTop="16dp"/>
+
+    <DatePicker
+        android:id="@+id/deadlineDatePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addPriority"
+        android:layout_marginTop="16dp"/>
+
+</RelativeLayout>
