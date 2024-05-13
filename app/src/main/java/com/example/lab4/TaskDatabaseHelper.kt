@@ -35,8 +35,8 @@ class TaskDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
 
     fun insertTask(task: Task){
         val db = writableDatabase
-        val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
-        val deadlineString = dateFormat.format(task.deadline)
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        val deadlineString = "${dateFormat.format(task.deadline)} 23:59:59"
 
         val values = ContentValues().apply {
             put(COLUMN_TITLE, task.title)
@@ -84,8 +84,8 @@ class TaskDatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_
 
     fun updateTask(task: Task){
         val db = writableDatabase
-        val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
-        val deadlineString = dateFormat.format(task.deadline)
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        val deadlineString = "${dateFormat.format(task.deadline)} 23:59:59"
         val values = ContentValues().apply {
             put(COLUMN_TITLE, task.title)
             put(COLUMN_CONTENT, task.content)
