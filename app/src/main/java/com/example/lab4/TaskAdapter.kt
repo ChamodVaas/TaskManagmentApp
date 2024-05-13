@@ -1,7 +1,6 @@
 package com.example.lab4
 
-import TaskDAO
-import android.content.Context
+import TaskViewModel
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -16,7 +15,7 @@ import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
-class TaskAdapter(private var tasks: List<Task>, private val taskDao: TaskDAO) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
+class TaskAdapter(private var tasks: List<Task>, private val taskDao: TaskViewModel) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
     private var sortedTasks: MutableList<Task> = ArrayList()
 

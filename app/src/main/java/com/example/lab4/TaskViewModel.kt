@@ -4,7 +4,7 @@ import com.example.lab4.TaskDatabaseHelper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class TaskDAO(context: Context) {
+class TaskViewModel(context: Context) {
     private val dbHelper: TaskDatabaseHelper = TaskDatabaseHelper(context)
 
     suspend fun insertTask(task: Task) {

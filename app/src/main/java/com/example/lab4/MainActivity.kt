@@ -1,6 +1,6 @@
 package com.example.lab4
 
-import TaskDAO
+import TaskViewModel
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -18,7 +18,7 @@ import java.util.Locale
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var db: TaskDAO
+    private lateinit var db: TaskViewModel
     private lateinit var tasksAdapter: TaskAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        db = TaskDAO(this)
+        db = TaskViewModel(this)
         tasksAdapter = TaskAdapter(ArrayList(), db)
 
         binding.taskRecylcleView.layoutManager = LinearLayoutManager(this)

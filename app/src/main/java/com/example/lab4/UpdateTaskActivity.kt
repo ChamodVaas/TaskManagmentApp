@@ -1,6 +1,6 @@
 package com.example.lab4
 
-import TaskDAO
+import TaskViewModel
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
@@ -14,7 +14,7 @@ import java.util.Calendar
 class UpdateTaskActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityUpdateTaskBinding
-    private lateinit var db: TaskDAO
+    private lateinit var db: TaskViewModel
     private var taskId: Int = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +22,7 @@ class UpdateTaskActivity : AppCompatActivity() {
         binding = ActivityUpdateTaskBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        db = TaskDAO(this)
+        db = TaskViewModel(this)
 
         taskId = intent.getIntExtra("task_id", -1)
         if (taskId == -1){
@@ -74,5 +74,6 @@ class UpdateTaskActivity : AppCompatActivity() {
                 Toast.makeText(this@UpdateTaskActivity, "Changes Saved", Toast.LENGTH_SHORT).show()
             }
         }
+
     }
 }
